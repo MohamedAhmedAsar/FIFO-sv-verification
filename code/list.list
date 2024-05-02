@@ -1,0 +1,5 @@
+code/packages/shared_pkg.sv
+code/packages/FIFO_transaction.sv
+code/packages/cover_pkg.sv
+code/packages/FIFO_scoreboard_pkg.sv
+code/modules/*

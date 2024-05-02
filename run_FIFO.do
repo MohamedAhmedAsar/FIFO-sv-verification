@@ -1,4 +1,4 @@
-vlog code/* +define+SIM +cover
+vlog -f code/list.list -mfcu +define+SIM +cover
 
 vsim -voptargs=+acc work.top -cover 
 
@@ -18,5 +18,6 @@ sim:/top/intf/empty \
 sim:/top/intf/almostfull \
 sim:/top/intf/almostempty \
 sim:/top/intf/underflow
-
+add wave -position insertpoint  \
+sim:/top/mon/f_scoreboard
 run -all

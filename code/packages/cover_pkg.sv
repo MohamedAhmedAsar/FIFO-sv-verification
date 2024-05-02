@@ -1,19 +1,9 @@
 package cover_pkg;
-    import transaction_pkg::*;
+    import FIFO_transaction_pkg::*;
 
     class FIFO_coverage;
 
         FIFO_transaction F_cvg_txn;
-        
-        function new;
-            cg=new();
-            cg.start();//? TODO 
-        endfunction
-
-        function void sample_data(FIFO_transaction F_txn);
-                F_cvg_txn=F_txn;
-                this.sample();//? TODO 
-        endfunction
 
         covergroup cg;
             
@@ -36,6 +26,16 @@ package cover_pkg;
             underflow_point_cross:cross wr_en_point,rd_en_point,underflow_point;
 
         endgroup
+
+        function new;
+            cg=new();
+            cg.start();//? TODO 
+        endfunction
+
+        function void sample_data(FIFO_transaction F_txn);
+            F_cvg_txn=F_txn;
+            cg.sample();//? TODO 
+    endfunction
 
     endclass
 endpackage
