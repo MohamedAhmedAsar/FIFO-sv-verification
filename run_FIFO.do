@@ -20,4 +20,7 @@ sim:/top/intf/almostempty \
 sim:/top/intf/underflow
 add wave -position insertpoint  \
 sim:/top/mon/f_scoreboard
+coverage save fiforpt.ucdb -onexit -du work.top
 run -all
+quit -sim
+vcover report fiforpt.ucdb -details -annotate -all -output fiforpt.txt
