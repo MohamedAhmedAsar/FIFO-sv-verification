@@ -20,22 +20,21 @@ package FIFO_scoreboard_pkg;
             read_ptr = 0;
             write_ptr = 0;
             count = 0;
-            return;
         end
+        else begin
+            
 
-        if (trans.rd_en && count!=0) begin
-            data_out_ref=fifo_mem[read_ptr];
-            read_ptr++;
+            if (trans.rd_en && count!=0) begin
+                data_out_ref=fifo_mem[read_ptr];
+                read_ptr++;
+            end
+            if (trans.wr_en&& count !=FIFO_DEPTH) begin
+                fifo_mem[write_ptr]=trans.data_in;
+                write_ptr++;
+            end
+            if(trans.wr_en && !trans.rd_en &&count !=FIFO_DEPTH) count++;
+            if(!trans.wr_en && trans.rd_en &&count !=0) count--;
         end
-
-        if (trans.wr_en&& count !=FIFO_DEPTH) begin
-            fifo_mem[write_ptr]=trans.data_in;
-            write_ptr++;
-        end
-
-        if(trans.wr_en && !trans.rd_en &&count !=FIFO_DEPTH) count++;
-        if(!trans.wr_en && trans.rd_en &&count !=0) count--;
-
         endfunction
 
         function void check_data(FIFO_transaction trans);

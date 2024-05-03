@@ -9,13 +9,14 @@ module monitor(FIFO_intf.monitor dut_if);
     FIFO_coverage f_coverage = new();
 
     initial begin
+        f_txn = new();
         forever begin
-            @(posedge dut_if.clk);
-            f_txn = new(); 
+            
             f_txn.data_in = dut_if.data_in;
             f_txn.wr_en = dut_if.wr_en;
             f_txn.rd_en = dut_if.rd_en;
             f_txn.rst_n = dut_if.rst_n;
+            @(negedge dut_if.clk);
             f_txn.data_out = dut_if.data_out;
             f_txn.full = dut_if.full;
             f_txn.almostfull = dut_if.almostfull;
@@ -24,7 +25,7 @@ module monitor(FIFO_intf.monitor dut_if);
             f_txn.overflow = dut_if.overflow;
             f_txn.underflow = dut_if.underflow;
             f_txn.wr_ack = dut_if.wr_ack;
-
+            @(posedge dut_if.clk);
             fork
                 //process 1
                 begin
@@ -32,8 +33,8 @@ module monitor(FIFO_intf.monitor dut_if);
                 end
                 //process 2
                 begin
-                    @(negedge dut_if.clk);
-                f_scoreboard.check_data(f_txn);
+                    
+                    f_scoreboard.check_data(f_txn);
                 end
 
             join
