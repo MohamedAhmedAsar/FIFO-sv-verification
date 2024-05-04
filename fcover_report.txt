@@ -6,17 +6,17 @@ Coverage Report by instance with details
 =================================================================================
 
 Covergroup Coverage:
-    Covergroups                      1        na        na    94.53%
+    Covergroups                      1        na        na   100.00%
         Coverpoints/Crosses         16        na        na        na
-            Covergroup Bins         74        67         7    90.54%
+            Covergroup Bins         67        67         0   100.00%
 ----------------------------------------------------------------------------------------------------------
 Covergroup                                             Metric       Goal       Bins    Status               
                                                                                                          
 ----------------------------------------------------------------------------------------------------------
- TYPE /cover_pkg/FIFO_coverage/cg                      94.53%        100          -    Uncovered            
-    covered/total bins:                                    67         74          -                      
-    missing/total bins:                                     7         74          -                      
-    % Hit:                                             90.54%        100          -                      
+ TYPE /cover_pkg/FIFO_coverage/cg                     100.00%        100          -    Covered              
+    covered/total bins:                                    67         67          -                      
+    missing/total bins:                                     0         67          -                      
+    % Hit:                                            100.00%        100          -                      
     Coverpoint wr_en_point                            100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
@@ -71,10 +71,10 @@ Covergroup                                             Metric       Goal       B
         % Hit:                                        100.00%        100          -                      
         bin auto[0]                                      9787          1          -    Covered              
         bin auto[1]                                       214          1          -    Covered              
-    Cross wr_ack_point_cross                           75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+    Cross wr_ack_point_cross                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                 948          1          -    Covered              
             bin <auto[1],auto[0],auto[1]>                1538          1          -    Covered              
@@ -82,11 +82,12 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                3405          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <auto[0],*,auto[1]>                         0          1          2    ZERO                 
-    Cross overflow_point_cross                         75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+        Illegal and Ignore Bins:
+            illegal_bin wr_and_wr_ack                       0                     -    ZERO                 
+    Cross overflow_point_cross                        100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                1203          1          -    Covered              
             bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
@@ -94,20 +95,22 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                1538          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <auto[0],*,auto[1]>                         0          1          2    ZERO                 
-    Cross full_point_cross                             87.50%        100          -    Uncovered            
-        covered/total bins:                                 7          8          -                      
-        missing/total bins:                                 1          8          -                      
-        % Hit:                                         87.50%        100          -                      
+        Illegal and Ignore Bins:
+            illegal_bin wr_and_over                         0                     -    ZERO                 
+    Cross full_point_cross                            100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                1203          1          -    Covered              
-            bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
-            bin <auto[0],auto[0],auto[1]>                1129          1          -    Covered              
             bin <auto[1],auto[1],auto[0]>                 948          1          -    Covered              
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
+            bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                1538          1          -    Covered              
+            bin <auto[0],auto[0],auto[1]>                1129          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                 899          1          -    Covered              
-            bin <auto[0],auto[1],auto[1]>                   0          1          1    ZERO                 
+        Illegal and Ignore Bins:
+            illegal_bin full_wr_rd                          0                     -    ZERO                 
     Cross empty_point_cross                           100.00%        100          -    Covered              
         covered/total bins:                                 8          8          -                      
         missing/total bins:                                 0          8          -                      
@@ -147,28 +150,29 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 843          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                4725          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                1941          1          -    Covered              
-    Cross underflow_point_cross                        75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+    Cross underflow_point_cross                       100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                 132          1          -    Covered              
-            bin <auto[0],auto[1],auto[1]>                  82          1          -    Covered              
             bin <auto[1],auto[1],auto[0]>                2019          1          -    Covered              
+            bin <auto[0],auto[1],auto[1]>                  82          1          -    Covered              
             bin <auto[0],auto[1],auto[0]>                 797          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                4943          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <*,auto[0],auto[1]>                         0          1          2    ZERO                 
+        Illegal and Ignore Bins:
+            illegal_bin underflow_and_rd                    0                     -    ZERO                 
 
 COVERGROUP COVERAGE:
 ----------------------------------------------------------------------------------------------------------
 Covergroup                                             Metric       Goal       Bins    Status               
                                                                                                          
 ----------------------------------------------------------------------------------------------------------
- TYPE /cover_pkg/FIFO_coverage/cg                      94.53%        100          -    Uncovered            
-    covered/total bins:                                    67         74          -                      
-    missing/total bins:                                     7         74          -                      
-    % Hit:                                             90.54%        100          -                      
+ TYPE /cover_pkg/FIFO_coverage/cg                     100.00%        100          -    Covered              
+    covered/total bins:                                    67         67          -                      
+    missing/total bins:                                     0         67          -                      
+    % Hit:                                            100.00%        100          -                      
     Coverpoint wr_en_point                            100.00%        100          -    Covered              
         covered/total bins:                                 2          2          -                      
         missing/total bins:                                 0          2          -                      
@@ -223,10 +227,10 @@ Covergroup                                             Metric       Goal       B
         % Hit:                                        100.00%        100          -                      
         bin auto[0]                                      9787          1          -    Covered              
         bin auto[1]                                       214          1          -    Covered              
-    Cross wr_ack_point_cross                           75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+    Cross wr_ack_point_cross                          100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                 948          1          -    Covered              
             bin <auto[1],auto[0],auto[1]>                1538          1          -    Covered              
@@ -234,11 +238,12 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                3405          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <auto[0],*,auto[1]>                         0          1          2    ZERO                 
-    Cross overflow_point_cross                         75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+        Illegal and Ignore Bins:
+            illegal_bin wr_and_wr_ack                       0                     -    ZERO                 
+    Cross overflow_point_cross                        100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                1203          1          -    Covered              
             bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
@@ -246,20 +251,22 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                1538          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <auto[0],*,auto[1]>                         0          1          2    ZERO                 
-    Cross full_point_cross                             87.50%        100          -    Uncovered            
-        covered/total bins:                                 7          8          -                      
-        missing/total bins:                                 1          8          -                      
-        % Hit:                                         87.50%        100          -                      
+        Illegal and Ignore Bins:
+            illegal_bin wr_and_over                         0                     -    ZERO                 
+    Cross full_point_cross                            100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                1203          1          -    Covered              
-            bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
-            bin <auto[0],auto[0],auto[1]>                1129          1          -    Covered              
             bin <auto[1],auto[1],auto[0]>                 948          1          -    Covered              
             bin <auto[0],auto[1],auto[0]>                 879          1          -    Covered              
+            bin <auto[1],auto[0],auto[1]>                3405          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                1538          1          -    Covered              
+            bin <auto[0],auto[0],auto[1]>                1129          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                 899          1          -    Covered              
-            bin <auto[0],auto[1],auto[1]>                   0          1          1    ZERO                 
+        Illegal and Ignore Bins:
+            illegal_bin full_wr_rd                          0                     -    ZERO                 
     Cross empty_point_cross                           100.00%        100          -    Covered              
         covered/total bins:                                 8          8          -                      
         missing/total bins:                                 0          8          -                      
@@ -299,20 +306,21 @@ Covergroup                                             Metric       Goal       B
             bin <auto[0],auto[1],auto[0]>                 843          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                4725          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                1941          1          -    Covered              
-    Cross underflow_point_cross                        75.00%        100          -    Uncovered            
-        covered/total bins:                                 6          8          -                      
-        missing/total bins:                                 2          8          -                      
-        % Hit:                                         75.00%        100          -                      
+    Cross underflow_point_cross                       100.00%        100          -    Covered              
+        covered/total bins:                                 6          6          -                      
+        missing/total bins:                                 0          6          -                      
+        % Hit:                                        100.00%        100          -                      
         Auto, Default and User Defined Bins:
             bin <auto[1],auto[1],auto[1]>                 132          1          -    Covered              
-            bin <auto[0],auto[1],auto[1]>                  82          1          -    Covered              
             bin <auto[1],auto[1],auto[0]>                2019          1          -    Covered              
+            bin <auto[0],auto[1],auto[1]>                  82          1          -    Covered              
             bin <auto[0],auto[1],auto[0]>                 797          1          -    Covered              
             bin <auto[1],auto[0],auto[0]>                4943          1          -    Covered              
             bin <auto[0],auto[0],auto[0]>                2028          1          -    Covered              
-            bin <*,auto[0],auto[1]>                         0          1          2    ZERO                 
+        Illegal and Ignore Bins:
+            illegal_bin underflow_and_rd                    0                     -    ZERO                 
 
-TOTAL COVERGROUP COVERAGE: 94.53%  COVERGROUP TYPES: 1
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
 
-Total Coverage By Instance (filtered view): 94.53%
+Total Coverage By Instance (filtered view): 100.00%
 

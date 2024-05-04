@@ -17,13 +17,21 @@ package cover_pkg;
             almostempty_point:coverpoint F_cvg_txn.almostempty;
             underflow_point:coverpoint F_cvg_txn.underflow;
             
-            wr_ack_point_cross:cross wr_en_point,rd_en_point,wr_ack_point;
-            overflow_point_cross:cross wr_en_point,rd_en_point,overflow_point;
-            full_point_cross:cross wr_en_point,rd_en_point,full_point;
+            wr_ack_point_cross:cross wr_en_point,rd_en_point,wr_ack_point{
+                illegal_bins wr_and_wr_ack=binsof(wr_en_point)intersect{0}&&binsof(wr_ack_point)intersect{1};
+            }
+            overflow_point_cross:cross wr_en_point,rd_en_point,overflow_point{
+                illegal_bins wr_and_over=binsof(wr_en_point)intersect{0}&&binsof(overflow_point)intersect{1};
+            }
+            full_point_cross:cross wr_en_point,rd_en_point,full_point{
+                illegal_bins full_wr_rd=binsof(wr_en_point)intersect{0}&&binsof(rd_en_point)intersect{1}&&binsof(full_point)intersect{1};
+            }
             empty_point_cross:cross wr_en_point,rd_en_point,empty_point;
             almostfull_point_cross:cross wr_en_point,rd_en_point,almostfull_point;
             almostempty_point_cross:cross wr_en_point,rd_en_point,almostempty_point;
-            underflow_point_cross:cross wr_en_point,rd_en_point,underflow_point;
+            underflow_point_cross:cross wr_en_point,rd_en_point,underflow_point{
+                illegal_bins underflow_and_rd=binsof(rd_en_point)intersect{0}&&binsof(underflow_point)intersect{1};
+            }
 
         endgroup
 
