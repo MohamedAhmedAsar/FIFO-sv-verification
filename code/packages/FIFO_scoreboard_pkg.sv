@@ -20,6 +20,7 @@ package FIFO_scoreboard_pkg;
             read_ptr = 0;
             write_ptr = 0;
             count = 0;
+            data_out_ref=0;
         end
         else begin
             
