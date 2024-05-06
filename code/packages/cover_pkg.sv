@@ -26,7 +26,10 @@ package cover_pkg;
             full_point_cross:cross wr_en_point,rd_en_point,full_point{
                 illegal_bins full_wr_rd=binsof(wr_en_point)intersect{0}&&binsof(rd_en_point)intersect{1}&&binsof(full_point)intersect{1};
             }
-            empty_point_cross:cross wr_en_point,rd_en_point,empty_point;
+            empty_point_cross:cross wr_en_point,rd_en_point,empty_point
+            {
+                illegal_bins empty_and_wr=binsof(wr_en_point)intersect{1}&&binsof(rd_en_point)intersect{0}&&binsof(empty_point)intersect{1};
+            }
             almostfull_point_cross:cross wr_en_point,rd_en_point,almostfull_point;
             almostempty_point_cross:cross wr_en_point,rd_en_point,almostempty_point;
             underflow_point_cross:cross wr_en_point,rd_en_point,underflow_point{

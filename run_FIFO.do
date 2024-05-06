@@ -23,5 +23,5 @@ sim:/top/mon/f_scoreboard
 coverage save fiforpt.ucdb -onexit -du work.top
 run -all
 coverage report -detail -cvg -directive -comments -output fcover_report.txt /cover_pkg/FIFO_coverage/cg
-quit -sim
+#quit -sim
 vcover report fiforpt.ucdb -details -annotate -all -output fiforpt.txt

@@ -7,8 +7,6 @@ package FIFO_scoreboard_pkg;
         
         localparam max_fifo_addr=$clog2(FIFO_DEPTH);
         bit [FIFO_WIDTH-1:0] data_out_ref;
-        bit full_ref, empty_ref, almost_full_ref, almost_empty_ref, overflow_ref, underflow_ref;
-
         bit [FIFO_WIDTH]fifo_mem[FIFO_DEPTH];
         bit [max_fifo_addr]read_ptr = 0;
         bit [max_fifo_addr] write_ptr = 0;
@@ -23,7 +21,6 @@ package FIFO_scoreboard_pkg;
             data_out_ref=0;
         end
         else begin
-            
 
             if (trans.rd_en && count!=0) begin
                 data_out_ref=fifo_mem[read_ptr];
